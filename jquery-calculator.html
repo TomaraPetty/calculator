@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>jQuery Calculator</title>
+  <meta charset="UTF-8">
+  <title>jQuery Calculator</title>
 
-    <!-- Added link to the jQuery Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- Added a link to Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-    <!-- Added a link to our external stylesheet-->
-    <link rel="stylesheet" href="style.css">
+  <!-- Added a link to our external stylesheet-->
+  <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
 
-<!-- Jumbotron for Title -->
-<div class="jumbotron">
+  <!-- Jumbotron for Title -->
+  <div class="jumbotron">
     <h1 class="text-center">jQuery Calculator</h1>
     <h3 class="text-center">Perform basic mathematic operations using the power of jQuery!</h3>
-</div>
+  </div>
 
-<div class="container">
+  <div class="container">
 
     <div class="row">
 
@@ -62,9 +64,9 @@
         <div class="card">
           <h3 class="card-header">Result</h3>
           <div class="card-body">
-            <h1 id="first-number"></h1>
+            <h1 id="firstNumber"></h1>
             <h1 id="operator"></h1>
-            <h1 id="second-number"></h1>
+            <h1 id="secondNumber"></h1>
             <hr>
             <h1 id="result"></h1>
           </div>
@@ -73,16 +75,39 @@
     </div>
   </div>
 
-<script type="text/javascript">
+  <script type="text/javascript">
 
-$(document).ready(function() {
+    $(document).ready(function () {
 
-// Your code here...
-var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+      // Your code here...
 
-});
+      var firstNumber = -1;
+      var secondNumber = -1;
+      var operator = "";
+      var result = 0;
 
-</script>
+      var numbers = ["button-0", "button-1", "button-2", "button-3", "button-4", "button-5", "button-6", "button-7", "button-8", "button-9"];
+
+      $(".number").on("click", function () {
+
+        firstNumber = $(this).attr("value");
+        $("#firstNumber").text(firstNumber);
+        firstNumber = parseFloat(firstNumber);
+        secondNumber = $(this).attr("value");
+        secondNumber = parseFloat(secondNumber);
+        $("#secondNumber").text(secondNumber);
+
+        function generateCalculator(firstNumber, secondNumber) {
+          for (i = 0; i < numbers.length; i++) {
+            var numberBtn = $(".number");
+
+          })
+    }
+
+};
+
+  </script>
 
 </body>
+
 </html>
